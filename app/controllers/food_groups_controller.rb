@@ -4,8 +4,12 @@ class FoodGroupsController < ApplicationController
   # GET /food_groups
   # GET /food_groups.json
   def index
-    @foods = Food.all
-    @food_groups = FoodGroup.all
+    @foods = Food.limit(5).order("RANDOM()")
+    @food_groups = []
+    @foods.each do |f|
+      group = FoodGroup.find(f.group_id)
+      @food_groups << group
+    end
   end
 
   # GET /food_groups/1
