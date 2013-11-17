@@ -2,23 +2,82 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+body {
+	width: 100%
+}
 
-div.divider {
+.bg {
+	width: 100%
+}
+
+
+.thing {
+	padding: 3%;
+}
+.container-fluid {
 	width: 100%;
-	color: red;
-	text-align: center;
+}
+
+.row-fluid {
+	width: 100%;
 }
 
 div.food {
-	width: 50%;
-	float: left;
+	
+	max-width: 140px;
+	text-align: center;
+	margin: 0 auto;
 }
 
-div.food-group{
-	width: 50%;
-	float: left;
+.drag-area {
+	margin-top: 15px;
+	height: 50px;
+	/*	width: 70px;*/
+	border: solid 2px grey;
+	margin-right: 50px;
 }
-
+div.blue {
+	background-color: #6D89D5;
+	width: 100%; 
+}
 h1.thing {
-	color: blue;
+	font-size: 3em;
+	color: black;
+	text-align: center;
+	margin-top: 3%;
 }
+
+.center {
+	text-align: center;
+	font-size: 15px;
+
+}
+.spacer {
+	min-height: 25px;
+}
+/*div.groups{
+	float: left;
+	height: 25px;
+	width: 100%;
+	}*/
+
+	div.food-group{
+		margin-left: 4px;
+		text-align: center;
+		margin-top: 15px;
+		height: 50px;
+		line-height: 50px;
+		/*	width: 70px;*/
+		border: solid 2px 00C322;
+		background-color: #00C322;
+		color: white; 
+		font-size: 15px;
+		
+	}
+
+	#successMessage {
+		text-align: center;
+		display: none;
+		color: #38E156;
+		font-size: 25px;
+	}

@@ -1,8 +1,45 @@
-<h1 class='thing'>What Food Group Do I Belong To?</h1>
-<div class='divider'>
-<img src="/assets/beef.png">
-  <% @foods.each do |food| %>
-  <div class='food'><%= food.name %></div>
-  <div class 'food-group'><%= @food_groups.sample.name %></div>
-<% end %>
+
+<div class='bg'>
+  <div class="row-fluid">
+    <h1 class='thing'>What Food Group Do I Belong To?</h1>
+
+       <div id="successMessage">
+
+    <h2>You Did It!</h2>
+  
+  </div>
+  </div>
+  <div class ='spacer'>
+  </div>
+
+  <div class="row-fluid">
+    <div class="span12 offset1">
+      <% @foods.each do |food| %>
+
+      <div class="span2">
+        <div class='food'><img src="/assets/<%=food.image%>.png"></div>
+        <div class='center'><%= food.name%></div>
+        <div class='span12 drag-area' id="<%= food.group_id %>"></div>
+      </div>
+      <% end %>
+    </div>
+  </div>
+
+
+  <div class ='spacer'>
+  </div>
+
+  <div class="row-fluid">
+    <div class="span12 offset1">
+      <% @food_groups.shuffle.each do |f| %>
+      <div class="span2">
+        <div class="span12">
+          <div class='food-group' id= "<%= f.id%>"><%= f.name %></div>
+        </div>
+      </div>
+      <%end%>
+    </div>
+  </div>
+
+
 </div>
