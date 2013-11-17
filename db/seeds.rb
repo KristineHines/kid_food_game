@@ -39,7 +39,6 @@ food_fruit_array = [
   %w(Apple), 
   %w(Banana), 
   %w(Orange),
-  %w(Strawberry)
 ]
 
 food_fruit_array.each_with_index do |g, i|
@@ -53,7 +52,6 @@ end
 food_pro_array = [ 
   %w(Beef), 
   %w(Chicken),
-  %w(Crab),
   %w(Egg),
   %w(Ham), 
   %w(Salmon), 
@@ -86,7 +84,6 @@ food_veg_array = [
   %w(Carrot),
   %w(Eggplant),
   ["Green Beans", 'green_beans'],
-  %w(Mushrooms), 
   %w(Potato), 
   %w(Tomato)
 ]

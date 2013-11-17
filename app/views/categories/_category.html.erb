@@ -1,3 +1,9 @@
-<h1><%= @category.name %></h1>
 
-<%= render partial: "categories/foods", locals: {category: @category} %>
+		<h1>Choose <%= @category.name %></h1>
+		<h4>Which of the following would you like to add to your recipe?</h4>
+		<div class="row">
+			<%= render partial: "categories/foods", locals: {category: @category} %>
+		</div>
+		
+
+
