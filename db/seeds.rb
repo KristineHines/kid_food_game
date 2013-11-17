@@ -18,9 +18,22 @@ food_grain_array.each_with_index do |g, i|
   fg = FoodGroup.find_or_create_by_name("Grains")
   category = Category.find_or_create_by_name("Carbs")
   image = g[1] ||= g.first.downcase
-  Food.create(name: g[0], category_id: category.id, image: image, group_id: fg.id)
+  Food.create(name: g[0], category_id: category.id, image: image, group_id: fg.id, score: 2 )
 end
 
+food_sweets_array = [
+ %w(Sugar), 
+ %w(Chocolate),
+ ["Ice Cream", 'vanilla-icecream'],
+ ['Ice Cream', 'chocolate-icecream']
+]
+
+food_sweets_array.each_with_index do |g, i|
+  fg = FoodGroup.find_or_create_by_name("Sweets")
+  category = Category.find_or_create_by_name("Carbs")
+  image = g[1] ||= g.first.downcase
+  Food.create(name: g[0], category_id: category.id, image: image, group_id: fg.id, score: 1 )
+end
 
 food_fruit_array = [
   %w(Apple), 
@@ -33,7 +46,7 @@ food_fruit_array.each_with_index do |g, i|
   fg = FoodGroup.find_or_create_by_name("Fruits")
   category = Category.find_or_create_by_name("Fruit_Veggies")
   image = g[1] ||= g.first.downcase
-  Food.create(name: g[0], category_id: category.id, image: image, group_id: fg.id)
+  Food.create(name: g[0], category_id: category.id, image: image, group_id: fg.id, score: 4)
 end
 
 
@@ -51,12 +64,11 @@ food_pro_array.each_with_index do |g, i|
   fg = FoodGroup.find_or_create_by_name("Protein")
   category = Category.find_or_create_by_name("Protein")
   image = g[1] ||= g.first.downcase
-  Food.create(name: g[0], category_id: category.id, image: image, group_id: fg.id)
+  Food.create(name: g[0], category_id: category.id, image: image, group_id: fg.id, score: 4)
 end
 
 
 food_dairy_array = [
-  ["Ice Cream", 'vanilla-icecream'],
   %w(Cheese),
   %w(Milk),
   %w(Yogurt)
@@ -66,7 +78,7 @@ food_dairy_array.each_with_index do |g, i|
   fg = FoodGroup.find_or_create_by_name("Dairy")
   category = Category.find_or_create_by_name("Protein")
   image = g[1] ||= g.first.downcase
-  Food.create(name: g[0], category_id: category.id, image: image, group_id: fg.id)
+  Food.create(name: g[0], category_id: category.id, image: image, group_id: fg.id, score: 3)
 end
 
 food_veg_array = [
@@ -83,6 +95,6 @@ food_veg_array.each_with_index do |g, i|
   fg = FoodGroup.find_or_create_by_name("Vegtables")
   category = Category.find_or_create_by_name("Fruit_Veggies")
   image = g[1] ||= g.first.downcase
-  Food.create(name: g[0], category_id: category.id, image: image, group_id: fg.id)
+  Food.create(name: g[0], category_id: category.id, image: image, group_id: fg.id, score: 5)
 end
 
