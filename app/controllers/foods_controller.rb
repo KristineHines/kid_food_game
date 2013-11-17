@@ -21,7 +21,7 @@ class FoodsController < ApplicationController
     scores = 0
     basket.each do |food|
       puts food
-      food_obj = Food.find_by_name(food.capitalize)
+      food_obj = Food.find_by_image(food)
       scores += food_obj.score
       if food_obj.score >= 3
         @good_basket << food_obj
