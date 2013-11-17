@@ -1,0 +1,12 @@
+<div class="active" id="category_1">
+	<%= render partial: "categories/category", locals: { category: @category = Category.find(1) } %>
+</div>
+<div class="inactive" id="category_2">
+	<%= render partial: "categories/category", locals: { category: @category = Category.find(2) } %>
+</div>
+<div class="inactive" id="category_3">
+	<%= render partial: "categories/category", locals: { category: @category = Category.find(3) } %>
+</div>
+
+<button id="category_button">Next Category</button>
+

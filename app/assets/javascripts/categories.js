@@ -1,7 +1,10 @@
 $(document).ready(function(){
-	$("input#category_button").on("click", function(event){
+	$("#category_button").on("click", function(event){
 		event.preventDefault()
-		$("div#category_1").removeClass("active").addClass("inactive");
-		$("div#category_1").next().removeClass("inactive").addClass("active");
+		var active = $(".active");
+		var last = $('#category_2');
+		active.removeClass("active").addClass("inactive");
+		active.next().removeClass("inactive").addClass("active");
 	});
 });
+
