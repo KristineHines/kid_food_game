@@ -12,6 +12,25 @@ class FoodsController < ApplicationController
   def show
   end
 
+  def calculate_score
+    puts params[:ingredients]
+    basket = params[:ingredients]
+    @good_basket = []
+    @bad_basket = []
+    basket.each do |food|
+      food_obj = Food.find_by_name(food.capitalize)
+      if food_obj.score >= 3
+        @good_basket << food_obj
+      else
+        @bad_basket << food_obj
+      end
+    end
+
+    respond_to do |format|
+      format.json {render json: {good_basket: @good_basket, bad_basket: @bad_basket} }
+    end
+  end
+
   # GET /foods/new
   def new
     @food = Food.new

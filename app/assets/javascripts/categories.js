@@ -32,6 +32,23 @@ $(document).ready(function(){
 			$('#final_recipe').removeClass("inactive");
 			$("#calories").text(data['calories']);
 		});
+		$.ajax({
+			type: 'POST',
+			url: '/foods/calculate_score',
+			data: {ingredients : basket},
+			dataType: "json" 
+		}).success(function(data){
+			console.log(data['good_basket']);
+			var good_basket = data['good_basket']
+				for (var i=0; i<good_basket.length; i++){
+					$(".balance-left").append("<img src='/assets/" + good_basket[i]['image'] + ".png' >");
+				}
+			console.log(data['bad_basket']);
+			var bad_basket = data['bad_basket']
+				for (var i=0; i<bad_basket.length; i++){
+					$(".balance-right").append("<img src='/assets/" + bad_basket[i]['image'] + ".png' >");
+				}
+		});
 	});
 });
 

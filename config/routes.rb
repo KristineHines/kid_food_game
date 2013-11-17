@@ -10,6 +10,7 @@ KidFoodGame::Application.routes.draw do
   get '/game/food_selections' => 'game#food_selections'
   get '/game/results' => 'game#results'
   post '/api/score_recipe' => 'api#score_recipe'
+  post '/foods/calculate_score' => 'foods#calculate_score'
 
 
   # The priority is based upon order of creation: first created -> highest priority.
