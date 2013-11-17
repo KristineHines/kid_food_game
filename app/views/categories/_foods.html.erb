@@ -1,5 +1,10 @@
 <ul>
 	<% @category.foods.each do |food| %>
-		<li id=<%=food.name%>><%= food.name %><img src="/assets/<%=food.image%>.png", width=140></li>
+		<div class="span3 centered mtop20 mleft60">
+			<li class="no-bullet" id=<%=food.name%>>
+				<img src="/assets/<%=food.image%>.png", width=95px><br/>
+				<%= food.name %>
+			</li>
+		</div>
 	<% end %>
 </ul>
