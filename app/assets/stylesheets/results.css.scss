@@ -33,12 +33,32 @@
 {
 	width: 60px;
 }
-.balance-left-loc{
+.balance-left-loc-ok{
 	position:absolute;
-	left:334px;
-	top:240px;
+	left:250px;
+	top:340px;
 }
-.balance-right-loc{
+.balance-left-loc-mid{
+	position:absolute;
+	left:200px;
+	top:330px;
+}
+.balance-left-loc-ko{
+	position:absolute;
+	left:200px;
+	top:290px;
+}
+.balance-right-loc-mid{
+	position:absolute;
+	right:210px;
+	top:360px;
+}
+.balance-right-loc-ko{
+	position:absolute;
+	right:210px;
+	top:400px;
+}
+.balance-right-loc-ok{
 	position:absolute;
 	right:300px;
 	top:300px;

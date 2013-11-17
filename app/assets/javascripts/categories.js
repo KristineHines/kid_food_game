@@ -48,14 +48,20 @@ $(document).ready(function(){
 				$("#healthiness-div").addClass('bg-ok');
 				$("#healthiness-image").attr('src', '/assets/thumbsup.png');
 				$("#balance").attr('src', '/assets/seasaw-1.png');
+				$("#left-loc").addClass('balance-left-loc-ok');
+				$("#right-loc").addClass('balance-right-loc-ok');
 			} else if (score < 4 && score >= 2.5){
 				$("#healthiness-div").addClass('bg-mid');
 				$("#healthiness-image").attr('src', '/assets/thumbsmid.png');
 				$("#balance").attr('src', '/assets/seasaw-2.png');
+				$("#left-loc").addClass('balance-left-loc-mid');
+				$("#right-loc").addClass('balance-right-loc-mid');
 			} else {
 				$("#healthiness-div").addClass('bg-ko');
 				$("#healthiness-image").attr('src', '/assets/thumbsdown.png');
 				$("#balance").attr('src', '/assets/seasaw-3.png');
+				$("#left-loc").addClass('balance-left-loc-ko');
+				$("#right-loc").addClass('balance-right-loc-ko');
 			}
 			var bad_basket = data['bad_basket']
 				for (var i=0; i<bad_basket.length; i++){
