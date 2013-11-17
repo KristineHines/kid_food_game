@@ -16,7 +16,7 @@ $(document).ready(function(){
 	$(".food_item").on("click", function(){
 		basket.push(this.id);
 		$("#basket").text(basket.length);
-		$(this).addClass("inactive");
+		$(this).addClass("bigger");
 	});
 
 	$('.results_button').on('click', function(event) {
