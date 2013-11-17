@@ -12,8 +12,11 @@ $(document).ready(function(){
 		}
 	});
 
+	var basket = []
 	$(".food_item").on("click", function(){
-		console.log(this.id);
+		basket.push(this.id);
+		$("#basket").text(basket.length);
+		$(this).addClass("inactive");
 	});
 });
 
