@@ -8,7 +8,7 @@ $(document).ready(function(){
 		active.next().removeClass("inactive").addClass("active");
 		if (click_count == 2){
 			$("#category_button").remove();
-			$(".results_button").removeClass("results_button");
+			$(".results_button").removeClass("results_inactive");
 		}
 	});
 
@@ -17,6 +17,19 @@ $(document).ready(function(){
 		basket.push(this.id);
 		$("#basket").text(basket.length);
 		$(this).addClass("inactive");
+	});
+
+	$('.results_button').on('click', function(event) {
+		event.preventDefault();
+		alert("hello");
+		$.ajax({
+			type: 'POST',
+			url: '/api/score_recipe',
+			data: {title : "basket", ingredients : basket},
+			dataType: "json" 
+		}).success(function(data){
+			alert(data);
+		});
 	});
 });
 
