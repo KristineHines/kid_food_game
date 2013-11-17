@@ -1,16 +1,16 @@
 class ApiController < ActionController::Base
   # Prevent CSRF attacks by raising an exception.
   # For APIs, you may want to use :null_session instead.
-  protect_from_forgery with: :exception
-  
+  protect_from_forgery with: :null_session, :if => Proc.new { |c| c.request.format == 'application/json' }
 
-  def score_recipe(title, ingredients)
-    hash = []
+  def score_recipe
+    ingredients = params[:ingredient].split("+")
+    array = []
     ingredients.each do |i|
-      hash << i
+      array << "1 "+ i
     end
-    path = "https://api.edamam.com/api/nutrient-info?extractOnly&app_id=${9b30529f}&app_key=${aa24e6a5157cad9adc800890b9bf3143}"
-    recipe = HTTParty.post(path, title: title, ingr: hash )
-    return recipe.to_json
+    path = "https://api.edamam.com/api/nutrient-info?extractOnly&app_id=#{ENV["ED_APP_ID"]}&app_key=#{ENV["ED_APP_KEY"]}"
+    recipe = HTTParty.post(path, body: {title: params[:title], ingr: array}.to_json, headers: {'Content-Type' => 'application/json'} )
+    render json: recipe
   end
 end

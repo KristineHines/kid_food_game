@@ -8,7 +8,9 @@ KidFoodGame::Application.routes.draw do
   resources :foods
 
   get '/game/food_selections' => 'game#food_selections'
-  post '/api/score_recipe/' => 'api#score_recipe'
+  # post '/api/score_recipe/' => 'api#score_recipe'
+
+  post '/api/score_recipe/:title/:ingredient' => 'api#score_recipe'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
