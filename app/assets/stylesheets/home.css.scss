@@ -19,7 +19,7 @@
 	background: url('/assets/logo.png') no-repeat ;
 	background-position:center;
 }
-#logo:hover{
+#logo:hover, #logo:active{
 	background: url('/assets/logo-closed.png') no-repeat ;
 	background-position:center;
 }
