@@ -1,3 +1,24 @@
 // Place all the styles related to the FoodGroups controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+div.divider {
+	width: 100%;
+	color: red;
+	text-align: center;
+}
+
+div.food {
+	width: 50%;
+	float: left;
+}
+
+div.food-group{
+	width: 50%;
+	float: left;
+}
+
+h1.thing {
+	color: blue;
+}

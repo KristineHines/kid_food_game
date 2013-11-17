@@ -4,12 +4,14 @@ class FoodGroupsController < ApplicationController
   # GET /food_groups
   # GET /food_groups.json
   def index
+    @foods = Food.all
     @food_groups = FoodGroup.all
   end
 
   # GET /food_groups/1
   # GET /food_groups/1.json
   def show
+    
   end
 
   # GET /food_groups/new
