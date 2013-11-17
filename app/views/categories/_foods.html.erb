@@ -1,7 +1,7 @@
 <ul>
 	<% @category.foods.each do |food| %>
 		<div class="span3 centered mtop20 mleft60">
-			<li class="no-bullet" id=<%=food.name%>>
+			<li class="no-bullet food_item" id=<%=food.name%>>
 				<img src="/assets/<%=food.image%>.png", width=95px><br/>
 				<%= food.name %>
 			</li>

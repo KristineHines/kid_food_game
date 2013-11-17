@@ -6,5 +6,9 @@ $(document).ready(function(){
 		active.removeClass("active").addClass("inactive");
 		active.next().removeClass("inactive").addClass("active");
 	});
+
+	$(".food_item").on("click", function(){
+		console.log(this.id);
+	});
 });
 
