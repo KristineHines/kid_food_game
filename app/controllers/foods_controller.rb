@@ -17,17 +17,22 @@ class FoodsController < ApplicationController
     basket = params[:ingredients]
     @good_basket = []
     @bad_basket = []
+    average = []
+    scores = 0
     basket.each do |food|
+      puts food
       food_obj = Food.find_by_name(food.capitalize)
+      scores += food_obj.score
       if food_obj.score >= 3
         @good_basket << food_obj
       else
         @bad_basket << food_obj
       end
     end
+    @average = scores/basket.length
 
     respond_to do |format|
-      format.json {render json: {good_basket: @good_basket, bad_basket: @bad_basket} }
+      format.json {render json: {good_basket: @good_basket, bad_basket: @bad_basket, average: @average} }
     end
   end
 

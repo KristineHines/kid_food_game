@@ -38,15 +38,28 @@ $(document).ready(function(){
 			data: {ingredients : basket},
 			dataType: "json" 
 		}).success(function(data){
-			console.log(data['good_basket']);
+			console.log(data['average']);
 			var good_basket = data['good_basket']
 				for (var i=0; i<good_basket.length; i++){
-					$(".balance-left").append("<img src='/assets/" + good_basket[i]['image'] + ".png' >");
+					$(".balance-left").append("<img class='img_resize' src='/assets/" + good_basket[i]['image'] + ".png' >");
 				}
-			console.log(data['bad_basket']);
+			var score = data['average'];
+			if (score >= 4){
+				$("#healthiness-div").addClass('bg-ok');
+				$("#healthiness-image").attr('src', '/assets/thumbsup.png');
+				$("#balance").attr('src', '/assets/seasaw-1.png');
+			} else if (score < 4 && score >= 2.5){
+				$("#healthiness-div").addClass('bg-mid');
+				$("#healthiness-image").attr('src', '/assets/thumbsmid.png');
+				$("#balance").attr('src', '/assets/seasaw-2.png');
+			} else {
+				$("#healthiness-div").addClass('bg-ko');
+				$("#healthiness-image").attr('src', '/assets/thumbsdown.png');
+				$("#balance").attr('src', '/assets/seasaw-3.png');
+			}
 			var bad_basket = data['bad_basket']
 				for (var i=0; i<bad_basket.length; i++){
-					$(".balance-right").append("<img src='/assets/" + bad_basket[i]['image'] + ".png' >");
+					$(".balance-right").append("<img class='img_resize' src='/assets/" + bad_basket[i]['image'] + ".png' >");
 				}
 		});
 	});
