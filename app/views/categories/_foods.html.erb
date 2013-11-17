@@ -1,0 +1,5 @@
+<ul>
+	<% @category.foods.each do |food| %>
+		<li id=<%=food.name%>><%= food.name %></li>
+	<% end %>
+</ul>
