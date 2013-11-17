@@ -19,6 +19,10 @@
 	<div class="inactive" id="category_3">
 		<%= render partial: "categories/category", locals: { category: @category = Category.find(3) } %>
 	</div>
+	<div class="inactive" id="final_recipe">
+		<%= @recipe %>
+		<%= render partial: "results", locals: { recipe: @recipe} %>
+	</div>
 </div>
 </div>
 </body>

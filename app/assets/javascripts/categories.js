@@ -21,14 +21,16 @@ $(document).ready(function(){
 
 	$('.results_button').on('click', function(event) {
 		event.preventDefault();
-		alert("hello");
 		$.ajax({
 			type: 'POST',
 			url: '/api/score_recipe',
 			data: {title : "basket", ingredients : basket},
 			dataType: "json" 
 		}).success(function(data){
-			alert(data);
+			$('.results_button').addClass("results_inactive");
+			$("#category_3").removeClass("active").addClass("inactive");
+			$('#final_recipe').removeClass("inactive");
+			$("#calories").text(data['calories']);
 		});
 	});
 });
