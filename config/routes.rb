@@ -1,4 +1,6 @@
 KidFoodGame::Application.routes.draw do
+  root 'home#index'
+
   resources :categories
 
   resources :food_groups
